@@ -1,0 +1,19 @@
+[project]
+name = "agentic-ai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.13.4",
+    "lancedb>=0.24.1",
+    "langchain>=0.3.26",
+    "langchain-openai>=0.3.28",
+    "lxml>=6.0.0",
+    "opentelemetry-instrumentation-botocore>=0.56b0",
+    "opentelemetry-instrumentation-jinja2>=0.56b0",
+    "opentelemetry-instrumentation-requests>=0.56b0",
+    "opentelemetry-instrumentation-tornado>=0.56b0",
+    "opentelemetry-instrumentation-urllib>=0.56b0",
+    "pydantic-ai[examples,logfire]>=0.4.4",
+]
