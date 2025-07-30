@@ -16,4 +16,6 @@ dependencies = [
     "opentelemetry-instrumentation-tornado>=0.56b0",
     "opentelemetry-instrumentation-urllib>=0.56b0",
     "pydantic-ai[examples,logfire]>=0.4.4",
+    "yahoo-finance>=1.4.0",
+    "yfinance>=0.2.65",
 ]

@@ -120,8 +120,8 @@ async def add_context(ctx: RunContext[FinaliserInput]):
 
 ### Example Usage
 
-# query = "Who has more powerful normal type attack - Charizard or Pikachu?"
-query = "Name the pokemons that learn the moves thunderbolt or growl."
+query = "Who has more powerful normal type attack - Charizard or Pikachu?"
+# query = "Name the p okemons that learn the moves thunderbolt or growl."
 
 subquestions = planner_agent.run_sync(query)
 print("Subquestions:")
@@ -148,4 +148,6 @@ final_input = FinaliserInput(
 final_result = finaliser_agent.run_sync(query, deps=final_input)
 print("Final Result:")
 print(final_result.output)
+
+
 
