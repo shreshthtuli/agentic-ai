@@ -99,7 +99,8 @@ result = graph_builder_agent.run_sync(
     "Add an edge from 'Shray' to 'Superbet' with relation 'employee of'. "
     "Add an edge from 'Wilko' to 'Superbet' with relation 'employee of'. "
     "Add an edge from 'Kanaad' to 'Superbet' with relation 'employee of'. "
-    "Add an edge from 'Kanaad' to 'Wilko' with relation 'friend of'. ")
+    "Add an edge from 'Kanaad' to 'Wilko' with relation 'friend of'. " 
+    "Add an edge from 'Wilko' to 'Shray' with relation 'friend of'. ")
 print(result.output)
 
 print(graph_to_string())
@@ -107,9 +108,13 @@ plot_graph()
 
 # Query the graph
 result = graph_query_agent.run_sync(
-    "What is the relation between 'Kanaad' and 'Wilko'?")
+    "What is the relation between 'Kanaad' and 'Wilko'?") # relationship check
 print(result.output)
 
 result = graph_query_agent.run_sync(
-    "What can you tell me about the user who is a friend of 'Wilko'?")
+    "What can you tell me about the user who is a friend of 'Wilko'?") # adjacency check
+print(result.output)
+
+result = graph_query_agent.run_sync(
+    "What can you tell me about the user who is a friend of the user who is the friend of 'Shray'?") # multi-hop relationship check
 print(result.output)
