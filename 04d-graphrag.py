@@ -40,7 +40,7 @@ ollama_model = OpenAIModel(
 
 
 graph_builder_agent = Agent(
-    model='gpt-4o-mini', #ollama_model,
+    model='gpt-4o', #ollama_model,
     output_type=None,  # No specific output type, just building the graph
     retries=5,
     system_prompt=(
@@ -91,16 +91,11 @@ def get_node_info(node: str) -> str:
         return f"Node {node} does not exist in the graph."
     
 # Build the graph with some example nodes and edges
-result = graph_builder_agent.run_sync(
-    "Add a node 'Shray' with description 'Sports heavy user'."
-    "Add a node 'Wilko' with description 'Gaming heavy user'. "
-    "Add a node 'Kanaad' with description 'VIP user'. "
-    "Add a node 'Superbet' with description 'Sports betting company'. "
-    "Add an edge from 'Shray' to 'Superbet' with relation 'employee of'. "
-    "Add an edge from 'Wilko' to 'Superbet' with relation 'employee of'. "
-    "Add an edge from 'Kanaad' to 'Superbet' with relation 'employee of'. "
-    "Add an edge from 'Kanaad' to 'Wilko' with relation 'friend of'. " 
-    "Add an edge from 'Wilko' to 'Shray' with relation 'friend of'. ")
+result = graph_builder_agent.run_sync("Shray is a sports heavy user. Wilko is a gaming heavy user. \
+                                      Kanaad is a VIP user. Superbet is a sports betting company. \
+                                      Shray is an employee of Superbet. Wilko is an employee of Superbet. \
+                                      Kanaad is an employee of Superbet. Kanaad is a friend of Wilko. \
+                                      Wilko is a friend of Shray.")
 print(result.output)
 
 print(graph_to_string())
